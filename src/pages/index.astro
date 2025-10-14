@@ -1,16 +1,89 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+// FIN DE MODIFICACIÓN
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Industrias Wasvelt</title>
-	</head>
-	<body>
-		<h1>INDUSTRIAS WASVELT</h1>
-	</body>
-</html>
+<Layout 
+  title="Industrias Wasvelt | Concentrados en Ingeniería" 
+  description="Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial."
+>
+  
+  <header>
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/la-empresa">La empresa</a>
+      <a href="/comercial">Comercial</a>
+      <a href="/proyectos">Proyectos</a>
+      <a href="/productos">Productos</a>
+      <a href="/contacto">More</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Sección Hero: Logo y Slogan Principal -->
+    <section id="hero">
+      <!-- El logo lo añadiremos como una imagen optimizada más adelante -->
+      <h2>[LOGO AQUÍ] INDUSTRIAS WASVELT</h2>
+      <h1>Concentrados...en Ingeniería</h1>
+      <p>Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial</p>
+    </section>
+
+    <!-- Galería de Servicios Principales -->
+    <section id="servicios-principales">
+  <article>
+    <a href="/proyectos">
+      <!-- Imagen de Proyectos -->
+      <h3>PROYECTOS</h3>
+    </a>
+  </article>
+  <article>
+    <a href="/montajes">
+      <!-- Imagen de Montajes -->
+      <h3>MONTAJES</h3>
+    </a>
+  </article>
+  <article>
+    <a href="/fabricacion">
+      <!-- Imagen de Fabricación -->
+      <h3>FABRICACIÓN</h3>
+    </a>
+  </article>
+</section>
+
+    <!-- Galería de Servicios Secundarios -->
+    <section id="servicios-secundarios">
+      <article>
+        <!-- Imagen de Atención Emergencias -->
+        <h3>ATENCIÓN EMERGENCIAS INDUSTRIALES</h3>
+        <p>(+57) 313 4512366</p>
+        <p>Estamos preparados para atender su necesidad industrial, contamos con stock de partes y repuestos que le permitan de manera rápida resolver la urgencia Industrial.</p>
+      </article>
+      <article>
+        <!-- Imagen Comercial -->
+        <h3>COMERCIAL</h3>
+      </article>
+      <article>
+        <!-- Imagen de Productos -->
+        <h3>PRODUCTOS</h3>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <h3>INDUSTRIAS WASVELT S.A.S.</h3>
+    <p>NIT. 800.166.064 - 6</p>
+    <address>
+      Dirección: Cra. 13a #10 - 52 Parque Industrial Montana<br>
+      Mosquera, Cundinamarca 250040
+    </address>
+    <div>
+      <h4>Teléfonos de Contacto:</h4>
+      <ul>
+        <li>Recursos Humanos: 313 6308911</li>
+        <li>Compras: 313 3322040</li>
+        <li>Ventas: 313 4512366</li>
+      </ul>
+    </div>
+  </footer>
+
+</Layout>

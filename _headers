@@ -1,0 +1,30 @@
+# _headers
+
+/*
+  # Política de Seguridad de Contenido (CSP)
+  # Esta es una de las cabeceras más importantes. Define de dónde se pueden cargar recursos.
+  # 'self' -> solo desde nuestro propio dominio.
+  # 'unsafe-inline' -> necesario para algunos scripts/estilos de Astro, lo refinaremos si es necesario.
+  # https: -> permite cargar recursos (fuentes, etc.) desde cualquier dominio seguro.
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https:;
+
+  # Strict-Transport-Security (HSTS)
+  # Fuerza a los navegadores a usar siempre HTTPS, previniendo ataques de "man-in-the-middle".
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+
+  # X-Frame-Options
+  # Previene que su sitio sea cargado dentro de un <iframe> en otro sitio (Clickjacking).
+  X-Frame-Options: SAMEORIGIN
+
+  # X-Content-Type-Options
+  # Previene que el navegador intente "adivinar" el tipo de un archivo, lo que puede ser explotado.
+  X-Content-Type-Options: nosniff
+
+  # Referrer-Policy
+  # Controla cuánta información se envía a otros sitios cuando se navega desde el nuestro.
+  Referrer-Policy: strict-origin-when-cross-origin
+
+  # Permissions-Policy
+  # Controla qué características del navegador (cámara, micrófono, etc.) puede usar el sitio.
+  # Lo configuramos para deshabilitar todo por defecto, que es lo más seguro.
+  Permissions-Policy: accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()
