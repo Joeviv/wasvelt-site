@@ -1,5 +1,16 @@
 ---
+// src/pages/index.astro
 import Layout from '../layouts/Layout.astro';
+// INICIO DE MODIFICACIÓN
+import { Image } from 'astro:assets';
+
+// Importamos cada imagen desde la carpeta de assets
+import imgProyectos from '../assets/proyectos.jpg';
+import imgMontajes from '../assets/montajes.jpg';
+import imgFabricacion from '../assets/fabricacion.jpg';
+import imgEmergencias from '../assets/emergencias.jpg';
+import imgComercial from '../assets/comercial.jpg';
+import imgProductos from '../assets/productos.jpg';
 // FIN DE MODIFICACIÓN
 ---
 
@@ -7,83 +18,146 @@ import Layout from '../layouts/Layout.astro';
   title="Industrias Wasvelt | Concentrados en Ingeniería" 
   description="Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial."
 >
-  
-  <header>
-    <nav>
-      <a href="/">Inicio</a>
-      <a href="/la-empresa">La empresa</a>
-      <a href="/comercial">Comercial</a>
-      <a href="/proyectos">Proyectos</a>
-      <a href="/productos">Productos</a>
-      <a href="/contacto">More</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- Sección Hero: Logo y Slogan Principal -->
+  <div class="container">
     <section id="hero">
-      <!-- El logo lo añadiremos como una imagen optimizada más adelante -->
-      <h2>[LOGO AQUÍ] INDUSTRIAS WASVELT</h2>
       <h1>Concentrados...en Ingeniería</h1>
       <p>Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial</p>
     </section>
 
-    <!-- Galería de Servicios Principales -->
-    <section id="servicios-principales">
-  <article>
-    <a href="/proyectos">
-      <!-- Imagen de Proyectos -->
-      <h3>PROYECTOS</h3>
-    </a>
-  </article>
-  <article>
-    <a href="/montajes">
-      <!-- Imagen de Montajes -->
-      <h3>MONTAJES</h3>
-    </a>
-  </article>
-  <article>
-    <a href="/fabricacion">
-      <!-- Imagen de Fabricación -->
-      <h3>FABRICACIÓN</h3>
-    </a>
-  </article>
-</section>
-
-    <!-- Galería de Servicios Secundarios -->
-    <section id="servicios-secundarios">
+    <section class="services-grid">
       <article>
-        <!-- Imagen de Atención Emergencias -->
-        <h3>ATENCIÓN EMERGENCIAS INDUSTRIALES</h3>
-        <p>(+57) 313 4512366</p>
-        <p>Estamos preparados para atender su necesidad industrial, contamos con stock de partes y repuestos que le permitan de manera rápida resolver la urgencia Industrial.</p>
+        <a href="/proyectos">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgProyectos} alt="Proyectos de ingeniería" />
+          <h3>PROYECTOS</h3>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
       </article>
       <article>
-        <!-- Imagen Comercial -->
-        <h3>COMERCIAL</h3>
+        <a href="/montajes">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgMontajes} alt="Montajes industriales" />
+          <h3>MONTAJES</h3>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
       </article>
       <article>
-        <!-- Imagen de Productos -->
-        <h3>PRODUCTOS</h3>
+        <a href="/fabricacion">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgFabricacion} alt="Fabricación de maquinaria" />
+          <h3>FABRICACIÓN</h3>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
       </article>
     </section>
-  </main>
 
-  <footer>
-    <h3>INDUSTRIAS WASVELT S.A.S.</h3>
-    <p>NIT. 800.166.064 - 6</p>
-    <address>
-      Dirección: Cra. 13a #10 - 52 Parque Industrial Montana<br>
-      Mosquera, Cundinamarca 250040
-    </address>
-    <div>
-      <h4>Teléfonos de Contacto:</h4>
-      <ul>
-        <li>Recursos Humanos: 313 6308911</li>
-        <li>Compras: 313 3322040</li>
-        <li>Ventas: 313 4512366</li>
-      </ul>
-    </div>
-  </footer>
-
+    <section class="services-grid">
+       <article>
+        <a href="/#">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgEmergencias} alt="Atención de emergencias industriales" />
+          <h3>ATENCIÓN EMERGENCIAS INDUSTRIALES</h3>
+          <p>(+57) 313 4512366</p>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
+      </article>
+      <article>
+        <a href="/comercial">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgComercial} alt="Área comercial y repuestos" />
+          <h3>COMERCIAL</h3>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
+      </article>
+      <article>
+        <a href="/productos">
+          <!-- INICIO DE MODIFICACIÓN -->
+          <Image src={imgProductos} alt="Catálogo de productos" />
+          <h3>PRODUCTOS</h3>
+          <!-- FIN DE MODIFICACIÓN -->
+        </a>
+      </article>
+    </section>
+  </div>
 </Layout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  #hero {
+    text-align: center;
+    padding: 2rem 0 4rem 0;
+  }
+
+  #hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  #hero p {
+    font-size: 1.2rem;
+    color: #666;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid article {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden; 
+  }
+
+  .services-grid article:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  .services-grid a {
+    display: block;
+    text-decoration: none;
+    color: var(--color-text);
+    height: 100%; /* Asegura que el enlace ocupe toda la tarjeta */
+  }
+
+  /* INICIO DE MODIFICACIÓN */
+  .services-grid article :global(img) { 
+    /* Usamos :global(img) para seleccionar la <img> generada por Astro */
+    width: 100%;
+    height: 180px;
+    object-fit: cover; 
+    display: block;
+  }
+
+  .services-grid h3 {
+    padding: 1.5rem 1rem 0.5rem 1rem;
+  }
+
+  .services-grid p {
+    padding: 0 1rem 1.5rem 1rem;
+    font-size: 0.9rem; /* Ajuste para el texto del teléfono */
+  }
+  /* FIN DE MODIFICACIÓN */
+
+  @media (max-width: 992px) {
+    .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

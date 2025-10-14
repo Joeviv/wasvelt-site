@@ -1,0 +1,44 @@
+---
+// src/components/Footer.astro
+---
+<footer>
+  <h3>INDUSTRIAS WASVELT S.A.S.</h3>
+  <p>NIT. 800.166.064 - 6</p>
+  <address>
+    Dirección: Cra. 13a #10 - 52 Parque Industrial Montana<br />
+    Mosquera, Cundinamarca 250040
+  </address>
+  <div>
+    <h4>Teléfonos de Contacto:</h4>
+    <ul>
+      <li>Recursos Humanos: 313 6308911</li>
+      <li>Compras: 313 3322040</li>
+      <li>Ventas: 313 4512366</li>
+    </ul>
+  </div>
+  <p class="copyright">&copy; {new Date().getFullYear()} Industrias Wasvelt. Todos los derechos reservados.</p>
+</footer>
+
+<style>
+  /* Estilos básicos y aislados para el footer */
+  footer {
+    padding: 2rem;
+    margin-top: 4rem;
+    background-color: #f8f9fa;
+    border-top: 1px solid #eee;
+    text-align: center;
+  }
+  footer h3, footer h4 {
+    margin-bottom: 0.5rem;
+  }
+  footer ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+  .copyright {
+    margin-top: 2rem;
+    font-size: 0.9em;
+    color: #6c757d;
+  }
+</style>

@@ -1,0 +1,116 @@
+---
+// src/components/Header.astro
+---
+<header>
+  <div class="logo">
+    <a href="/">
+      <!-- El logo lo añadiremos como una imagen optimizada más adelante -->
+      <strong>INDUSTRIAS WASVELT</strong>
+    </a>
+  </div>
+
+  <!-- Navegación para pantallas grandes -->
+  <nav class="desktop-nav">
+    <a href="/la-empresa">La empresa</a>
+    <a href="/comercial">Comercial</a>
+    <a href="/proyectos">Proyectos</a>
+    <a href="/productos">Productos</a>
+    <a href="/contacto">Contacto</a>
+  </nav>
+
+  <!-- Botón para menú en pantallas pequeñas -->
+  <button id="mobile-menu-button" class="mobile-nav-toggle">Menú</button>
+
+  <!-- Navegación para pantallas pequeñas (inicialmente oculta) -->
+  <nav id="mobile-menu" class="mobile-nav">
+    <a href="/">Inicio</a>
+    <a href="/la-empresa">La empresa</a>
+    <a href="/comercial">Comercial</a>
+    <a href="/proyectos">Proyectos</a>
+    <a href="/productos">Productos</a>
+    <a href="/contacto">Contacto</a>
+  </nav>
+</header>
+
+<script>
+  // Script para manejar la funcionalidad del menú móvil
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  menuButton.addEventListener('click', () => {
+    // Alterna la clase 'is-active' para mostrar u ocultar el menú
+    mobileMenu.classList.toggle('is-active');
+  });
+</script>
+
+<style>
+  /* INICIO DE MODIFICACIÓN */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .logo a {
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.2rem;
+  }
+
+  /* --- Estilos para Escritorio --- */
+  .desktop-nav {
+    display: flex; /* Visible en escritorio */
+  }
+
+  .desktop-nav a {
+    margin-left: 1.5rem;
+  }
+
+  /* --- Estilos para Móvil --- */
+  .mobile-nav-toggle,
+  .mobile-nav {
+    display: none; /* Oculto en escritorio */
+  }
+
+  /* --- Media Query para pantallas pequeñas --- */
+  @media (max-width: 768px) {
+    .desktop-nav {
+      display: none; /* Oculta el menú de escritorio */
+    }
+
+    .mobile-nav-toggle {
+      display: block; /* Muestra el botón de menú */
+      background: none;
+      border: 1px solid var(--color-text);
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      font-family: var(--font-family-base);
+    }
+
+    .mobile-nav {
+      display: none; /* Menú móvil oculto por defecto */
+      position: absolute;
+      top: 60px; /* Ajustar según altura del header */
+      left: 0;
+      right: 0;
+      background-color: white;
+      border-bottom: 1px solid #eee;
+      z-index: 100;
+    }
+
+    .mobile-nav.is-active {
+      display: block; /* Se muestra al hacer clic */
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 1rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  }
+  /* FIN DE MODIFICACIÓN */
+</style>

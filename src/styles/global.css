@@ -1,0 +1,44 @@
+/* src/styles/global.css */
+
+/* 1. Importación de la fuente desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* 2. Variables CSS para colores y fuentes (fácil de modificar después) */
+:root {
+  --font-family-base: 'Roboto', sans-serif;
+  --color-text: #333;
+  --color-background: #fff;
+  --color-primary: #0056b3; /* Un azul similar al del logo */
+}
+
+/* 3. Reseteo de estilos básicos para consistencia entre navegadores */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* 4. Estilos globales para el body */
+body {
+  font-family: var(--font-family-base);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  line-height: 1.6;
+}
+
+/* 5. Estilos para los elementos principales */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
