@@ -1,10 +1,130 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout 
   title="Contacto | Industrias Wasvelt" 
-  description="Contacte con el equipo de Industrias Wasvelt para cotizaciones y soporte."
+  description="Contacte con el equipo de Industrias Wasvelt para emergencias, cotizaciones y soporte."
 >
-  <h1>Contacto</h1>
-  <p>Información de contacto y formulario...</p>
+  <div class="container">
+    <div class="contact-card">
+      <!-- Sección de Emergencias -->
+      <div class="emergency-section">
+        <h2>ATENCIÓN EMERGENCIAS INDUSTRIALES</h2>
+        <a href="tel:+573134512366" class="phone-number">(+57) 313 4512366</a>
+        <p class="support-text">
+          Estamos preparados para atender su necesidad industrial, contamos con stock de partes y repuestos que le permitan de manera rápida resolver la urgencia Industrial.
+        </p>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Otros Contactos -->
+      <div class="other-contacts-section">
+        <div class="contact-item">
+          <h4>Recursos Humanos</h4>
+          <p><a href="tel:+573136308911">(+57) 313 6308911</a></p>
+        </div>
+        <div class="contact-item">
+          <h4>Compras</h4>
+          <p><a href="tel:+573133322040">(+57) 313 3322040</a></p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Contacto por Correo Electrónico -->
+      <div class="email-section">
+        <p>Para cualquier inquietud o solicitud, escríbanos a:</p>
+        <a href="mailto:info@wasvelt.com" class="email-address">info@wasvelt.com</a>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 4rem auto;
+    padding: 2rem;
+  }
+
+  .contact-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+
+  .emergency-section h2 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 2.2rem;
+    color: #888;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.4;
+  }
+
+  .phone-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--color-text);
+    text-decoration: none;
+    margin: 1.5rem 0;
+  }
+
+  .support-text {
+    font-size: 1.1rem;
+    color: var(--color-subtle-gray);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 3rem auto;
+    width: 80%;
+  }
+
+  .other-contacts-section {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+  }
+
+  .contact-item h4 {
+    font-weight: 400;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact-item p a {
+    font-size: 1.1rem;
+    color: var(--color-subtle-gray);
+  }
+
+  .email-section p {
+    font-size: 1.1rem;
+    color: var(--color-subtle-gray);
+  }
+
+  .email-address {
+    display: block;
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-primary);
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 600px) {
+    .contact-card { padding: 2rem; }
+    .emergency-section h2 { font-size: 1.8rem; }
+    .phone-number { font-size: 2rem; }
+    .email-address { font-size: 1.5rem; }
+    .other-contacts-section { flex-direction: column; gap: 2rem; }
+  }
+</style>
