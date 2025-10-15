@@ -1,11 +1,8 @@
 ---
 // src/components/Hero.astro
-import Logo from './Logo.astro';
 ---
 <section class="hero-section">
-  <div class="logo-container">
-    <Logo />
-  </div>
+  <h2 class="hero-brand-title">Industrias Wasvelt</h2>
   <h1>Concentrados...en Ingeniería</h1>
   <p>Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial</p>
 </section>
@@ -14,24 +11,28 @@ import Logo from './Logo.astro';
   .hero-section {
     text-align: center;
     padding: 4rem 2rem;
-    opacity: 0; /* Inicialmente invisible para la animación */
+    opacity: 0;
     animation: fadeIn 1s ease-out forwards;
   }
 
-  .logo-container {
-    margin-bottom: 2rem;
+  /* Estilos para el nuevo título y animación */
+  .hero-brand-title {
+    font-size: 5.1rem; /* 70% más grande que 3rem (3 * 1.7 = 5.1) */
+    font-weight: 300;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    
+    /* Animación de revelación */
+    animation: revealText 1.5s ease-out forwards;
+    animation-delay: 0.5s; /* Inicia después de que el contenedor aparece */
+    opacity: 0; /* Empieza invisible */
   }
-
-  /* Hacemos que el logo dentro de esta sección sea grande */
-  .logo-container :global(img) {
-    width: 250px;
-    height: auto;
-  }
-
+  
   h1 {
-    font-size: 3rem; /* Tamaño grande */
-    font-weight: 300; /* Peso ligero */
+    font-size: 3rem;
+    font-weight: 300;
     margin-bottom: 1rem;
+    color: #555; /* Un color ligeramente más suave para el subtítulo */
   }
 
   p {
@@ -41,24 +42,32 @@ import Logo from './Logo.astro';
     margin: 0 auto;
   }
 
-  /* Animación de entrada */
+  /* Animación de entrada para toda la sección */
   @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Animación de revelación de texto */
+  @keyframes revealText {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(30px) scale(0.95);
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0) scale(1);
     }
   }
+  /* FIN DE MODIFICACIÓN */
 
   @media (max-width: 768px) {
+    /* Ajuste de tamaños para móvil */
+    .hero-brand-title {
+      font-size: 3.5rem;
+    }
     h1 {
       font-size: 2.2rem;
-    }
-    .logo-container :global(img) {
-      width: 200px;
     }
   }
 </style>
