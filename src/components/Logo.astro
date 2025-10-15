@@ -1,0 +1,15 @@
+---
+// src/components/Logo.astro
+import { Image } from 'astro:assets';
+import logoSrc from '../assets/logo.svg';
+---
+<a href="/" class="logo-link">
+  {/* INICIO DE MODIFICACIÓN */}
+  <Image src={logoSrc} alt="Logo de Industrias Wasvelt" width="120" />
+  {/* FIN DE MODIFICACIÓN */}
+</a>
+<style>
+  .logo-link {
+    display: inline-block;
+  }
+</style>

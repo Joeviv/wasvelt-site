@@ -1,0 +1,116 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+// Importaciones para Equipos de elevación e izaje
+import imgIzajeManual from '../../assets/comercial/izaje/izajeManual.jpg';
+import imgIzajeElectrico from '../../assets/comercial/izaje/izajeElectrico.jpg';
+import imgManipulacion from '../../assets/comercial/izaje/manipulacionMateriales.jpg';
+
+// INICIO DE MODIFICACIÓN
+// Importaciones para Soldadura y control de humos (ruta corregida)
+import imgExtractorHumo from '../../assets/comercial/soldadura/extractorHumo.jpg';
+// FIN DE MODIFICACIÓN
+import imgFiltrosHumo from '../../assets/comercial/soldadura/filtros.jpg';
+
+// Importaciones para Plataformas de elevación
+import imgPlataformaTijera from '../../assets/comercial/elevacion/plataformaTijera.jpg';
+import imgPlataforma2 from '../../assets/comercial/elevacion/plataforma2.jpg';
+import imgPlataforma3 from '../../assets/comercial/elevacion/plataforma3.jpg';
+
+// Importaciones para Sistema de detección de metales
+import imgIman1 from '../../assets/comercial/metal/iman1.jpg';
+import imgIman2 from '../../assets/comercial/metal/iman2.jpg';
+import imgIman2_1 from '../../assets/comercial/metal/iman2-1.jpg';
+import imgDetectorVertical from '../../assets/comercial/metal/detectorVertical.jpg';
+import imgDetectorMetal from '../../assets/comercial/metal/detectorMetal.jpg';
+
+// Importación para Motovibrador
+import imgMotovibrador from '../../assets/comercial/motovibrador/motovibrador.jpg';
+---
+
+<Layout 
+  title="Comercial | Industrias Wasvelt" 
+  description="Equipos y accesorios comerciales: elevación, izaje, soldadura, control de humos y más."
+>
+  <div class="container">
+    <header class="page-header">
+      <h1>COMERCIAL</h1>
+    </header>
+
+    <section class="category-section">
+      <h2>Equipos de elevación e izaje</h2>
+      <div class="item-grid">
+        <article class="item-card">
+          <Image src={imgIzajeManual} alt="Izaje manual" />
+          <h4>Izaje manual</h4>
+          <p>Polipastos de cadena, elevador magnético, gancho universal, etc.</p>
+        </article>
+        <article class="item-card">
+          <Image src={imgIzajeElectrico} alt="Izaje eléctrico" />
+          <h4>Izaje eléctrico</h4>
+        </article>
+        <article class="item-card">
+          <Image src={imgManipulacion} alt="Manipulación de materiales" />
+          <h4>Manipulación de materiales</h4>
+        </article>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Equipos y accesorios soldadura y control de humos</h2>
+      <div class="item-grid">
+        <article class="item-card">
+          <Image src={imgExtractorHumo} alt="Extractor de humo soldadura" />
+          <h4>Extractor de humo soldadura</h4>
+        </article>
+        <article class="item-card">
+          <Image src={imgFiltrosHumo} alt="Filtros para extractor de humo" />
+          <h4>Filtros para extractor de humo</h4>
+        </article>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Plataformas de elevación</h2>
+      <div class="item-grid">
+        <article class="item-card"><Image src={imgPlataformaTijera} alt="Plataforma de tijera" /><h4>Plataforma de tijera</h4></article>
+        <article class="item-card"><Image src={imgPlataforma2} alt="Plataforma de elevación tipo 2" /><h4>Plataforma de elevación</h4></article>
+        <article class="item-card"><Image src={imgPlataforma3} alt="Plataforma de elevación tipo 3" /><h4>Plataforma de elevación</h4></article>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Sistema de detección de metales</h2>
+      <div class="item-grid">
+        <article class="item-card"><Image src={imgIman1} alt="Imán D1 2mm x 25.4mm" /><h4>Imán D1 2mm x 25.4mm</h4></article>
+        <article class="item-card"><Image src={imgIman2} alt="Imán N38 2' x 2'x1'" /><h4>Imán N38 2" x 2"x1"</h4></article>
+        <article class="item-card"><Image src={imgIman2_1} alt="Imán N38 2' x 2'x1'" /><h4>Imán N38 2" x 2"x1"</h4></article>
+        <article class="item-card"><Image src={imgDetectorVertical} alt="Detector metales posición vertical 150mm" /><h4>Detector metales posición vertical 150mm</h4></article>
+        <article class="item-card"><Image src={imgDetectorMetal} alt="Detector metales" /><h4>Detector metales</h4></article>
+      </div>
+    </section>
+
+    <section class="category-section">
+      <h2>Motovibrador</h2>
+      <div class="item-grid">
+        <article class="item-card"><Image src={imgMotovibrador} alt="Motovibrador" /><h4>Motovibrador</h4></article>
+      </div>
+    </section>
+
+  </div>
+</Layout>
+
+<style>
+  .container { max-width: 1100px; margin: 0 auto; padding: 2rem; }
+  .page-header { text-align: center; margin-bottom: 4rem; }
+  .page-header h1 { font-size: 2.8rem; font-weight: 300; color: var(--color-subtle-gray); letter-spacing: 0.1em; }
+  .category-section { margin-bottom: 4rem; }
+  .category-section h2 { font-size: 2rem; font-weight: 300; margin-bottom: 2rem; }
+  .item-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 2rem; }
+  .item-card { border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; text-align: center; transition: box-shadow 0.3s ease; display: flex; flex-direction: column; }
+  .item-card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+  .item-card :global(img) { width: 100%; height: 200px; object-fit: contain; padding: 1rem; }
+  .item-card h4 { padding: 0.5rem 1rem; font-weight: 400; font-size: 1rem; flex-grow: 1; display: flex; align-items: center; justify-content: center; }
+  .item-card p { padding: 0 1rem 1.5rem 1rem; font-size: 0.8rem; color: var(--color-subtle-gray); min-height: 60px; }
+</style>

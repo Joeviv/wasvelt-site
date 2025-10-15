@@ -1,0 +1,64 @@
+---
+// src/components/Hero.astro
+import Logo from './Logo.astro';
+---
+<section class="hero-section">
+  <div class="logo-container">
+    <Logo />
+  </div>
+  <h1>Concentrados...en Ingeniería</h1>
+  <p>Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial</p>
+</section>
+
+<style>
+  .hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    opacity: 0; /* Inicialmente invisible para la animación */
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  .logo-container {
+    margin-bottom: 2rem;
+  }
+
+  /* Hacemos que el logo dentro de esta sección sea grande */
+  .logo-container :global(img) {
+    width: 250px;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 3rem; /* Tamaño grande */
+    font-weight: 300; /* Peso ligero */
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: var(--color-subtle-gray);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* Animación de entrada */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+    .logo-container :global(img) {
+      width: 200px;
+    }
+  }
+</style>

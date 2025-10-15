@@ -1,10 +1,152 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+
+import imgWashington from '../assets/washington-veloza.jpg';
+import imgCarlos from '../assets/carlos-veloza.jpg';
+import imgAdriana from '../assets/adriana-veloza.jpg';
 ---
+
 <Layout 
   title="La Empresa | Industrias Wasvelt" 
-  description="Conozca la historia y el equipo de Industrias Wasvelt."
+  description="Conozca la historia, el equipo y el enfoque general de Industrias Wasvelt, fundada en 1992."
 >
-  <h1>La Empresa</h1>
-  <p>Contenido de la página sobre la empresa...</p>
+  <div class="container">
+    <section class="about-section">
+      <div class="team-profiles">
+        <div class="profile">
+          <Image src={imgWashington} alt="Foto de Washington Veloza" class="profile-img" />
+          <div class="profile-info">
+            <h4>Washington Veloza</h4>
+            <p>GERENTE GENERAL</p>
+          </div>
+        </div>
+        <div class="profile">
+          <Image src={imgCarlos} alt="Foto de Carlos Veloza" class="profile-img" />
+          <div class="profile-info">
+            <h4>Carlos Veloza</h4>
+            <p>DISEÑO E INGENIERÍA</p>
+          </div>
+        </div>
+        <div class="profile">
+          <Image src={imgAdriana} alt="Foto de Adriana Veloza" class="profile-img" />
+          <div class="profile-info">
+            <h4>Adriana Veloza</h4>
+            <p>FINANCIERO Y COMERCIAL</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="company-description">
+        <p>La empresa Industrias Wasvelt fue fundada en el año de 1992, con el fin de cubrir la necesidad latente de diseño, construcción y asesoría en el sector agroindustrial. A lo largo de más de 30 años de experiencia dentro de la industria nacional ha logrado a través de sus servicios prestados a la industria nacional especialmente en el sector de alimentos balanceados para animales, posicionándose en el mercado nacional como una empresa líder en el uso de tecnologías para el mejoramiento de los procesos productivos de sus clientes ofreciendo: asesorías, diseños, fabricación, montajes y mantenimiento de maquinaria agroindustrial.</p>
+      </div>
+    </section>
+
+    <section class="focus-section">
+      <h2>ENFOQUE GENERAL</h2>
+      <div class="video-container">
+        <iframe width="946" height="532" src="https://www.youtube.com/embed/M5PKukvniBk" title="T3.2 la Empresa Industrias Wasvelt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Dejamos el espacio preparado para la sección de mapas -->
+    <section class="visit-us-section">
+      <h2>VISÍTANOS SEDE PRINCIPAL</h2>
+      <!-- Aquí irá el primer mapa de Google -->
+      <div class="map-placeholder">Mapa de Sede Principal</div>
+      
+      <h2>SEDE COMERCIAL</h2>
+      <!-- Aquí irá el segundo mapa de Google -->
+      <div class="map-placeholder">Mapa de Sede Comercial</div>
+    </section>
+  </div>
 </Layout>
+
+<style>
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .about-section {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    align-items: start;
+    margin-bottom: 5rem;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 1.5rem;
+  }
+
+  .profile-info h4 {
+    font-weight: 400;
+    margin-bottom: 0.25rem;
+  }
+
+  .profile-info p {
+    font-size: 0.8rem;
+    color: var(--color-subtle-gray);
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .company-description {
+    padding-top: 1rem;
+  }
+
+  .focus-section h2, .visit-us-section h2 {
+    text-align: center;
+    font-weight: 400;
+    font-size: 2.5rem;
+    color: var(--color-subtle-gray);
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #000;
+    margin-bottom: 5rem;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .map-placeholder {
+    height: 400px;
+    background-color: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-subtle-gray);
+    margin-bottom: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-section {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

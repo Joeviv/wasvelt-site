@@ -1,10 +1,10 @@
 ---
-// src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
 // INICIO DE MODIFICACIÓN
+import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
+import Hero from '../components/Hero.astro'; 
 
-// Importamos cada imagen desde la carpeta de assets
+// Importaciones para Servicios (rutas corregidas a un solo nivel de subida)
 import imgProyectos from '../assets/proyectos.jpg';
 import imgMontajes from '../assets/montajes.jpg';
 import imgFabricacion from '../assets/fabricacion.jpg';
@@ -18,63 +18,48 @@ import imgProductos from '../assets/productos.jpg';
   title="Industrias Wasvelt | Concentrados en Ingeniería" 
   description="Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial."
 >
-  <div class="container">
-    <section id="hero">
-      <h1>Concentrados...en Ingeniería</h1>
-      <p>Asesoría, diseño, fabricación, montajes y mantenimiento de maquinaria agroindustrial</p>
-    </section>
+  <Hero />
 
+  <div class="container">
     <section class="services-grid">
       <article>
         <a href="/proyectos">
-          <!-- INICIO DE MODIFICACIÓN -->
           <Image src={imgProyectos} alt="Proyectos de ingeniería" />
           <h3>PROYECTOS</h3>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
       <article>
         <a href="/montajes">
-          <!-- INICIO DE MODIFICACIÓN -->
           <Image src={imgMontajes} alt="Montajes industriales" />
           <h3>MONTAJES</h3>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
       <article>
         <a href="/fabricacion">
-          <!-- INICIO DE MODIFICACIÓN -->
           <Image src={imgFabricacion} alt="Fabricación de maquinaria" />
           <h3>FABRICACIÓN</h3>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
     </section>
 
     <section class="services-grid">
        <article>
-        <a href="/#">
-          <!-- INICIO DE MODIFICACIÓN -->
+        <a href="/contacto">
           <Image src={imgEmergencias} alt="Atención de emergencias industriales" />
           <h3>ATENCIÓN EMERGENCIAS INDUSTRIALES</h3>
           <p>(+57) 313 4512366</p>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
       <article>
         <a href="/comercial">
-          <!-- INICIO DE MODIFICACIÓN -->
           <Image src={imgComercial} alt="Área comercial y repuestos" />
           <h3>COMERCIAL</h3>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
       <article>
         <a href="/productos">
-          <!-- INICIO DE MODIFICACIÓN -->
           <Image src={imgProductos} alt="Catálogo de productos" />
           <h3>PRODUCTOS</h3>
-          <!-- FIN DE MODIFICACIÓN -->
         </a>
       </article>
     </section>
@@ -86,22 +71,6 @@ import imgProductos from '../assets/productos.jpg';
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
-  }
-
-  #hero {
-    text-align: center;
-    padding: 2rem 0 4rem 0;
-  }
-
-  #hero h1 {
-    font-size: 2.8rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-  }
-
-  #hero p {
-    font-size: 1.2rem;
-    color: #666;
   }
 
   .services-grid {
@@ -116,7 +85,7 @@ import imgProductos from '../assets/productos.jpg';
     border-radius: 8px;
     text-align: center;
     transition: box-shadow 0.3s ease;
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .services-grid article:hover {
@@ -127,12 +96,10 @@ import imgProductos from '../assets/productos.jpg';
     display: block;
     text-decoration: none;
     color: var(--color-text);
-    height: 100%; /* Asegura que el enlace ocupe toda la tarjeta */
+    height: 100%;
   }
 
-  /* INICIO DE MODIFICACIÓN */
-  .services-grid article :global(img) { 
-    /* Usamos :global(img) para seleccionar la <img> generada por Astro */
+  .services-grid :global(img) { 
     width: 100%;
     height: 180px;
     object-fit: cover; 
@@ -145,9 +112,8 @@ import imgProductos from '../assets/productos.jpg';
 
   .services-grid p {
     padding: 0 1rem 1.5rem 1rem;
-    font-size: 0.9rem; /* Ajuste para el texto del teléfono */
+    font-size: 0.9rem;
   }
-  /* FIN DE MODIFICACIÓN */
 
   @media (max-width: 992px) {
     .services-grid {

@@ -1,12 +1,12 @@
 ---
 // src/components/Header.astro
+// INICIO DE MODIFICACIÓN
+import Logo from './Logo.astro';
+// FIN DE MODIFICACIÓN
 ---
 <header>
   <div class="logo">
-    <a href="/">
-      <!-- El logo lo añadiremos como una imagen optimizada más adelante -->
-      <strong>INDUSTRIAS WASVELT</strong>
-    </a>
+    <Logo />
   </div>
 
   <!-- Navegación para pantallas grandes -->
@@ -44,7 +44,6 @@
 </script>
 
 <style>
-  /* INICIO DE MODIFICACIÓN */
   header {
     display: flex;
     justify-content: space-between;
@@ -53,36 +52,41 @@
     border-bottom: 1px solid #eee;
   }
 
-  .logo a {
-    font-weight: bold;
-    text-decoration: none;
-    color: var(--color-text);
-    font-size: 1.2rem;
-  }
-
   /* --- Estilos para Escritorio --- */
   .desktop-nav {
-    display: flex; /* Visible en escritorio */
+    display: flex;
   }
 
   .desktop-nav a {
     margin-left: 1.5rem;
+    /* INICIO DE MODIFICACIÓN */
+    color: var(--color-text); /* Color por defecto igual al del texto */
+    text-decoration: none;
+    transition: color 0.2s ease;
+    /* FIN DE MODIFICACIÓN */
   }
+  
+  /* INICIO DE MODIFICACIÓN */
+  .desktop-nav a:hover {
+    color: var(--color-primary); /* Color azul al pasar el mouse */
+    text-decoration: none;
+  }
+  /* FIN DE MODIFICACIÓN */
 
   /* --- Estilos para Móvil --- */
   .mobile-nav-toggle,
   .mobile-nav {
-    display: none; /* Oculto en escritorio */
+    display: none;
   }
 
   /* --- Media Query para pantallas pequeñas --- */
   @media (max-width: 768px) {
     .desktop-nav {
-      display: none; /* Oculta el menú de escritorio */
+      display: none;
     }
 
     .mobile-nav-toggle {
-      display: block; /* Muestra el botón de menú */
+      display: block;
       background: none;
       border: 1px solid var(--color-text);
       padding: 0.5rem 1rem;
@@ -91,9 +95,9 @@
     }
 
     .mobile-nav {
-      display: none; /* Menú móvil oculto por defecto */
+      display: none;
       position: absolute;
-      top: 60px; /* Ajustar según altura del header */
+      top: 60px;
       left: 0;
       right: 0;
       background-color: white;
@@ -102,7 +106,7 @@
     }
 
     .mobile-nav.is-active {
-      display: block; /* Se muestra al hacer clic */
+      display: block;
     }
 
     .mobile-nav a {
@@ -110,7 +114,9 @@
       padding: 1rem 2rem;
       text-align: center;
       border-bottom: 1px solid #f0f0f0;
+      /* INICIO DE MODIFICACIÓN */
+      color: var(--color-text); /* Color por defecto en móvil */
+      /* FIN DE MODIFICACIÓN */
     }
   }
-  /* FIN DE MODIFICACIÓN */
 </style>
