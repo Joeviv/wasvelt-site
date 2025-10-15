@@ -1,10 +1,70 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
+
 <Layout 
   title="Proyectos | Industrias Wasvelt" 
-  description="Explore los proyectos realizados por Industrias Wasvelt."
+  description="Explore los proyectos, montajes y fabricaciones realizadas por Industrias Wasvelt."
 >
-  <h1>Nuestros Proyectos</h1>
-  <p>Contenido de la página de proyectos...</p>
+  <div class="container">
+    <header class="page-header">
+      <h1>PROYECTOS</h1>
+    </header>
+
+    <section class="video-section">
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1127587260?&title=0&byline=0&portrait=0&autoplay=1&muted=1&quality=1080p" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+  </div>
 </Layout>
+
+<style>
+  .container {
+    /* INICIO DE MODIFICACIÓN */
+    max-width: 1100px; /* Aumentamos el ancho para un video más grande */
+    /* FIN DE MODIFICACIÓN */
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: var(--color-subtle-gray);
+    letter-spacing: 0.1em;
+  }
+
+  .video-section {
+    margin-bottom: 4rem;
+  }
+
+  .video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    background: #f0f0f0;
+  }
+
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+</style>

@@ -12,6 +12,19 @@ import imgAdriana from '../assets/adriana-veloza.jpg';
   description="Conozca la historia, el equipo y el enfoque general de Industrias Wasvelt, fundada en 1992."
 >
   <div class="container">
+    <section class="video-section-header">
+      <h2 class="section-title">FABRICACIÓN</h2>
+      <div class="video-container">
+        <iframe 
+          src="https://player.vimeo.com/video/1127627424?&title=0&byline=0&portrait=0&autoplay=1&muted=1&quality=1080p" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture" 
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
     <section class="about-section">
       <div class="team-profiles">
         <div class="profile">
@@ -43,110 +56,83 @@ import imgAdriana from '../assets/adriana-veloza.jpg';
     </section>
 
     <section class="focus-section">
-      <h2>ENFOQUE GENERAL</h2>
+      <h2 class="section-title">ENFOQUE GENERAL</h2>
       <div class="video-container">
-        <iframe width="946" height="532" src="https://www.youtube.com/embed/M5PKukvniBk" title="T3.2 la Empresa Industrias Wasvelt" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe 
+          src="https://player.vimeo.com/video/1127631246?&title=0&byline=0&portrait=0&autoplay=1&muted=1&quality=1080p" 
+          title="Enfoque General Industrias Wasvelt" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; picture-in-picture; web-share" 
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
     </section>
-
-    <!-- Dejamos el espacio preparado para la sección de mapas -->
-    <section class="visit-us-section">
-      <h2>VISÍTANOS SEDE PRINCIPAL</h2>
-      <!-- Aquí irá el primer mapa de Google -->
-      <div class="map-placeholder">Mapa de Sede Principal</div>
-      
-      <h2>SEDE COMERCIAL</h2>
-      <!-- Aquí irá el segundo mapa de Google -->
-      <div class="map-placeholder">Mapa de Sede Comercial</div>
-    </section>
   </div>
+  
+  <section class="visit-us-section">
+    <h2 class="section-title">VISÍTANOS SEDE PRINCIPAL</h2>
+    <div class="map-container">
+      {/* INICIO DE MODIFICACIÓN: Su iframe para Sede Principal */}
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.3045420989984!2d-74.23151778751755!3d4.7170678414916845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f77f0ada00867%3A0xd7f7e5d1da71b6d5!2sPQ8C%2BRC%2C%20Mosquera%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1760558054237!5m2!1ses-419!2sco" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      {/* FIN DE MODIFICACIÓN */}
+    </div>
+    <div class="map-links">
+      <p class="map-legend">Obtener direcciones:</p>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=PQ8C%2BRC%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Google Maps</a>
+      <a href="http://maps.apple.com/?daddr=PQ8C%2BRC%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Apple Maps</a>
+      <a href="https://waze.com/ul?q=PQ8C%2BRC%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Waze</a>
+    </div>
+    
+    <h2 class="section-title">SEDE COMERCIAL</h2>
+    <div class="map-container">
+      {/* INICIO DE MODIFICACIÓN: Su iframe para Sede Comercial */}
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3881.011521524271!2d-74.2447179898441!3d4.7149368189099325!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f77f0ada00867%3A0x3b4a804a3996a64!2sPQ75%2BX4%2C%20Mosquera%2C%20Cundinamarca!5e0!3m2!1ses-419!2sco!4v1760558093165!5m2!1ses-419!2sco" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+      {/* FIN DE MODIFICACIÓN */}
+    </div>
+     <div class="map-links">
+      <p class="map-legend">Obtener direcciones:</p>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=PQ75%2BX4%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Google Maps</a>
+      <a href="http://maps.apple.com/?daddr=PQ75%2BX4%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Apple Maps</a>
+      <a href="https://waze.com/ul?q=PQ75%2BX4%20Mosquera,%20Cundinamarca,%20Colombia" target="_blank">Waze</a>
+    </div>
+  </section>
 </Layout>
 
 <style>
-  .container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  .about-section {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 3rem;
-    align-items: start;
-    margin-bottom: 5rem;
-  }
-
-  .profile {
-    display: flex;
-    align-items: center;
-    margin-bottom: 2.5rem;
-  }
-
-  .profile-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1.5rem;
-  }
-
-  .profile-info h4 {
-    font-weight: 400;
-    margin-bottom: 0.25rem;
-  }
-
-  .profile-info p {
-    font-size: 0.8rem;
-    color: var(--color-subtle-gray);
-    letter-spacing: 0.1em;
-    margin: 0;
-  }
-
-  .company-description {
-    padding-top: 1rem;
-  }
-
-  .focus-section h2, .visit-us-section h2 {
-    text-align: center;
-    font-weight: 400;
-    font-size: 2.5rem;
-    color: var(--color-subtle-gray);
-    letter-spacing: 0.1em;
-    margin-bottom: 2rem;
-  }
-
-  .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* Proporción 16:9 */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    margin-bottom: 5rem;
-  }
-
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .map-placeholder {
-    height: 400px;
-    background-color: #f0f0f0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-subtle-gray);
-    margin-bottom: 3rem;
-  }
-
+  .container { max-width: 1000px; margin: 0 auto; padding: 4rem 2rem; }
+  .section-title { text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-weight: 200; font-size: 2.8rem; color: #888; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2.5rem; }
+  .video-section-header { margin-bottom: 4rem; }
+  .focus-section { margin-top: 6rem; } 
+  .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; }
+  .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+  .about-section { display: grid; grid-template-columns: 1fr 1.5fr; gap: 3rem; align-items: start; margin-top: 4rem; }
+  .profile { display: flex; align-items: center; margin-bottom: 2.5rem; }
+  .profile-img { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; margin-right: 1.5rem; }
+  .profile-info h4 { font-weight: 400; margin-bottom: 0.25rem; }
+  .profile-info p { font-size: 0.8rem; color: var(--color-subtle-gray); letter-spacing: 0.1em; margin: 0; }
+  .company-description p { text-align: justify; }
+  .visit-us-section { margin-top: 8rem; }
+  .map-container iframe { filter: grayscale(100%); width: 100%; height: 550px; display: block; border: 0; }
+  .map-links { text-align: center; padding: 2rem 0; max-width: 1000px; margin: 0 auto; }
+  .map-legend { font-size: 0.9rem; color: var(--color-subtle-gray); margin-bottom: 1rem; }
+  .map-links a { display: inline-block; margin: 0 1.5rem; font-weight: 400; font-size: 1.1rem; padding: 0.5rem 1rem; border-bottom: 1px solid transparent; transition: border-color 0.3s ease; }
+  .map-links a:hover { border-bottom: 1px solid var(--color-primary); text-decoration: none; }
   @media (max-width: 768px) {
-    .about-section {
-      grid-template-columns: 1fr;
-    }
+    .about-section { grid-template-columns: 1fr; }
+    .section-title { font-size: 2rem; }
+    .container { padding: 2rem 1rem; }
   }
 </style>
