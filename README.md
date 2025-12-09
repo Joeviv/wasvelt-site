@@ -1,47 +1,83 @@
-# Astro Starter Kit: Minimal
+# Wasvelt Site
 
-```sh
-npm create astro@latest -- --template minimal
+> **Website de Wasvelt**
+> **URL**: wasvelt-site (AWS Amplify)
+> **Última actualización**: 2025-12-08
+
+---
+
+## 📊 Estado Actual
+
+| Aspecto | Estado |
+|---------|--------|
+| **Framework** | Astro 5.16.x |
+| **Vulnerabilidades** | ✅ 0 |
+| **Deploy** | AWS Amplify |
+| **Repositorio** | Joeviv/wasvelt-site |
+
+---
+
+## 🔧 Stack Técnico
+
+- **Framework**: Astro 5.16.x
+- **SEO**: astro-seo 0.8.4
+- **Sitemap**: @astrojs/sitemap 3.6.0
+- **Compression**: astro-compress 2.3.8
+- **Icons**: astro-icon 1.1.5
+- **Formatting**: Prettier 3.6.2
+
+---
+
+## 📋 Historial de Cambios
+
+### 2025-12-08
+- Actualizado a Astro 5.16.x via `npm audit fix`
+- 0 vulnerabilidades
+- Documentación de seguridad creada
+
+### (Historial anterior pendiente de documentar)
+
+---
+
+## 🎯 Próximos Cambios Planificados
+
+- [ ] (Por definir)
+
+---
+
+## ⚙️ Preferencias de Desarrollo
+
+```yaml
+Package Manager: pnpm (preferido) / npm
+Astro Version: v5.x (mantener actualizado)
+Deployment: AWS Amplify (auto-deploy desde main)
+Branch Strategy: main (producción)
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+---
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## 🔒 Seguridad
 
-## 🚀 Project Structure
+- **GitHub**: Joeviv/wasvelt-site
+- **2FA**: ✅ YubiKey + Passkeys
+- **Dependabot**: ⏳ Por activar
+- **Amplify Firewall**: No activado (no necesario para sitio estático)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+## 📝 Notas Importantes
+
+- Mantener Astro actualizado (v5.x)
+- Usar `pnpm install` para nuevas dependencias
+- Correr `npm audit` antes de cada deploy
+
+---
+
+## 🧞 Comandos
+
+```bash
+pnpm install        # Instalar dependencias
+npm run dev         # Servidor local en localhost:4321
+npm run build       # Build de producción
+npm run preview     # Preview del build
 ```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
