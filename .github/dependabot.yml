@@ -7,8 +7,5 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 5
-    labels:
-      - "dependencies"
-      - "security"
     commit-message:
       prefix: "deps"
