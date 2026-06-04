@@ -9,11 +9,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "^3.6.0",
-    "astro": "^5.7.11",
-    "astro-compress": "^2.3.8",
-    "astro-icon": "^1.1.5",
-    "astro-seo": "^0.8.4",
-    "prettier": "^3.6.2"
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "6.4.4",
+    "astro-compress": "2.4.1",
+    "astro-seo": "1.1.0",
+    "prettier": "^3.6.2",
+    "sharp": "^0.34.0"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ],
+    "overrides": {
+      "yaml@<2.8.3": ">=2.8.3"
+    }
   }
 }
