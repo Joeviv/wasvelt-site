@@ -1,6 +1,5 @@
 /* src/styles/global.css */
-
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+/* La fuente Lato se auto-hospeda via @fontsource/lato (importada en Layout.astro). */
 
 :root {
   --font-family-base: 'Lato', sans-serif;

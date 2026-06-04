@@ -14,6 +14,9 @@ importers:
       '@astrojs/sitemap':
         specifier: 3.7.3
         version: 3.7.3
+      '@fontsource/lato':
+        specifier: ^5.2.7
+        version: 5.2.7
       astro:
         specifier: 6.4.4
         version: 6.4.4(@types/node@25.9.1)(lightningcss@1.32.0)(rollup@4.61.1)(terser@5.46.1)(yaml@2.9.0)
@@ -284,6 +287,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@fontsource/lato@5.2.7':
+    resolution: {integrity: sha512-k5mum1ADbDW5cTw1Ett1eQVWeoZ6gq0ct6SFBibEhB4LRxhniChJZTBgd6ph5yBxLkN1fcnsnmicBNA4S/3nbw==}
 
   '@img/colour@1.1.0':
     resolution: {integrity: sha512-Td76q7j57o/tLVdgS746cYARfSyxk8iEfRxewL9h4OMzYhbW4TAcppl0mT4eyqXddh6L/jwoM75mo7ixa/pCeQ==}
@@ -2217,6 +2223,8 @@ snapshots:
 
   '@esbuild/win32-x64@0.27.7':
     optional: true
+
+  '@fontsource/lato@5.2.7': {}
 
   '@img/colour@1.1.0': {}
 

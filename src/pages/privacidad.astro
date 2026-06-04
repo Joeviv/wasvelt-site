@@ -1,0 +1,85 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Privacidad y cookies | Industrias Wasvelt"
+  description="Información sobre privacidad, cookies y servicios de terceros utilizados en el sitio web de Industrias Wasvelt."
+>
+  <div class="container">
+    <header class="page-header">
+      <h1>PRIVACIDAD Y COOKIES</h1>
+    </header>
+
+    <section class="legal-content">
+      <p>
+        Este sitio web no recoge datos personales por cuenta propia. No dispone de formularios de contacto que almacenen su información, ni utiliza herramientas de analítica o seguimiento publicitario propias. La navegación por nuestras páginas no requiere registro alguno.
+      </p>
+
+      <p>
+        Para mostrar nuestros videos y ubicaciones, el sitio incorpora contenido embebido de servicios de terceros: <strong>Vimeo</strong> (reproducción de videos) y <strong>Google Maps</strong> (mapas de nuestras sedes). Al cargar este contenido, dichos proveedores pueden instalar cookies y procesar la dirección IP del visitante de acuerdo con sus propias políticas de privacidad. En el caso de los videos de Vimeo hemos activado su modo de seguimiento reducido (Do Not Track), si bien la gestión final de los datos corresponde a cada proveedor.
+      </p>
+
+      <p>
+        Puede consultar el tratamiento que cada servicio hace de su información en sus respectivas políticas:
+      </p>
+      <ul>
+        <li><a href="https://vimeo.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Vimeo</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de privacidad de Google</a></li>
+      </ul>
+
+      <p>
+        El visitante puede aceptar, bloquear o eliminar las cookies de terceros en cualquier momento desde la configuración de su navegador. Bloquear estas cookies puede afectar la visualización de los videos o mapas embebidos, pero no impide el acceso al resto del sitio.
+      </p>
+
+      <p>
+        Para cualquier consulta sobre esta página, puede escribirnos a <a href="mailto:info@wasvelt.com">info@wasvelt.com</a>.
+      </p>
+    </section>
+  </div>
+</Layout>
+
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .page-header h1 {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 2.8rem;
+    color: #888;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .legal-content p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+
+  .legal-content ul {
+    margin: 0 0 1.5rem 1.5rem;
+    line-height: 1.8;
+  }
+
+  .legal-content a {
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 600px) {
+    .container { padding: 2rem 1rem; }
+    .page-header h1 { font-size: 2rem; }
+    .legal-content p { text-align: left; }
+  }
+</style>

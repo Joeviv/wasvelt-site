@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "3.7.3",
+    "@fontsource/lato": "^5.2.7",
     "astro": "6.4.4",
     "astro-compress": "2.4.1",
     "astro-seo": "1.1.0",

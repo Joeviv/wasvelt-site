@@ -17,7 +17,10 @@
     </ul>
   </div>
   <p class="copyright">&copy; {new Date().getFullYear()} Industrias Wasvelt. Todos los derechos reservados.</p>
-  
+  <p class="legal-links">
+    <a href="/privacidad">Privacidad y cookies</a>
+  </p>
+
   {/* INICIO DE MODIFICACIÓN */}
   <p class="powered-by">
     Powered by: <a href="https://www.stacksolver.tech/" target="_blank" rel="noopener noreferrer">StacksolverTech</a>
@@ -47,7 +50,20 @@
     font-size: 0.9em;
     color: #6c757d;
   }
-  
+  .legal-links {
+    margin-top: 0.5rem;
+    font-size: 0.85em;
+  }
+  .legal-links a {
+    color: #6c757d;
+    text-decoration: none;
+    border-bottom: 1px dotted #aaa;
+  }
+  .legal-links a:hover {
+    color: var(--color-primary);
+    border-bottom-color: var(--color-primary);
+  }
+
   /* INICIO DE MODIFICACIÓN */
   .powered-by {
     margin-top: 0.5rem;
