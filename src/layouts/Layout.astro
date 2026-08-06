@@ -1,5 +1,4 @@
 ---
-import { SEO } from 'astro-seo';
 import '@fontsource/lato/300.css';
 import '@fontsource/lato/400.css';
 import '@fontsource/lato/700.css';
@@ -15,6 +14,7 @@ export interface Props {
 const { title, description } = Astro.props;
 const siteUrl = "https://www.wasvelt.com";
 const socialImageUrl = `${siteUrl}/placeholder-social.jpg`;
+const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
 ---
 
 <!DOCTYPE html>
@@ -28,23 +28,25 @@ const socialImageUrl = `${siteUrl}/placeholder-social.jpg`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     
-    <SEO
-      title={title}
-      description={description}
-      canonical={`${siteUrl}${Astro.url.pathname}`}
-      openGraph={{
-        basic: {
-          title: title,
-          type: 'website',
-          image: socialImageUrl,
-          url: `${siteUrl}${Astro.url.pathname}`,
-        },
-        image: {
-            alt: 'Logo de Industrias Wasvelt',
-        },
-        site_name: 'Industrias Wasvelt'
-      }}
-    />
+    {/*
+      Estas etiquetas las generaba `astro-seo`. Se pasaron a Astro nativo porque esa
+      integración declara `@astrojs/check` —un type-checker, herramienta de desarrollo—
+      como dependencia de PRODUCCIÓN, y eso arrastraba `ajv` → `fast-uri` al árbol
+      publicado: la fuente real de las 3 HIGH de fast-uri de este repo.
+      La salida es idéntica a la de astro-seo, con una corrección: `og:site_name` sí se
+      emite ahora (astro-seo ignoraba en silencio la prop `site_name`).
+    */}
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="description" content={description} />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image:url" content={socialImageUrl} />
+    <meta property="og:image:alt" content="Logo de Industrias Wasvelt" />
+    <meta property="og:site_name" content="Industrias Wasvelt" />
 
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
