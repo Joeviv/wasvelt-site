@@ -12,7 +12,6 @@
     "@astrojs/sitemap": "3.7.3",
     "@fontsource/lato": "^5.2.7",
     "astro": "7.1.4",
-    "astro-seo": "1.1.0",
     "prettier": "^3.6.2",
     "sharp": "^0.35.3"
   },
