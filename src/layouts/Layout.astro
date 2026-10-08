@@ -9,9 +9,11 @@ import Footer from '../components/Footer.astro';
 export interface Props {
   title: string;
   description: string;
+  // Sólo la 404 lo cambia (`noindex`); el resto de páginas sale igual que antes.
+  robots?: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, robots = "index, follow" } = Astro.props;
 const siteUrl = "https://www.wasvelt.com";
 const socialImageUrl = `${siteUrl}/placeholder-social.jpg`;
 const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
@@ -39,7 +41,7 @@ const canonicalUrl = `${siteUrl}${Astro.url.pathname}`;
     <title>{title}</title>
     <link rel="canonical" href={canonicalUrl} />
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content={robots} />
     <meta property="og:title" content={title} />
     <meta property="og:type" content="website" />
     <meta property="og:image" content={socialImageUrl} />
