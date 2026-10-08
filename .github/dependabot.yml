@@ -1,11 +1,29 @@
 version: 2
 updates:
-  # NPM dependencies
+  # NPM (cubre pnpm y npm via package.json + lockfile).
+  # Revisado 2026-10-08:
+  # - groups: UN PR semanal para versiones menores y parches, y otro para las mayores, en vez de uno por paquete.
+  # - cooldown: no proponer una version hasta 5 dias despues de publicada (control barato de cadena de suministro).
+  #   No aplica a las actualizaciones de seguridad: esas siguen llegando al momento.
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "06:00"
+      timezone: "America/Bogota"
     open-pull-requests-limit: 5
     commit-message:
       prefix: "deps"
+    cooldown:
+      default-days: 5
+    groups:
+      deps-menores-y-parches:
+        applies-to: version-updates
+        update-types:
+          - "minor"
+          - "patch"
+      deps-mayores:
+        applies-to: version-updates
+        update-types:
+          - "major"
