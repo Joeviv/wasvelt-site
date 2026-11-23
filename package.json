@@ -9,10 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/sitemap": "3.7.4",
+    "@astrojs/sitemap": "3.7.5",
     "@fontsource/lato": "^5.3.0",
-    "astro": "7.4.7",
-    "prettier": "^3.9.10",
+    "astro": "7.4.12",
+    "prettier": "^3.10.1",
     "sharp": "^0.35.5"
   },
   "pnpm": {
