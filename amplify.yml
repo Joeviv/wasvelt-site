@@ -5,7 +5,7 @@ frontend:
       commands:
         - nvm install 24
         - nvm use 24
-        - npm install -g pnpm@9
+        - npm install -g pnpm@10.34.9
         - pnpm config set store-dir .pnpm-store
         - pnpm install --frozen-lockfile
         - pnpm audit --audit-level=high || true
